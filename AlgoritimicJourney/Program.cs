@@ -6,8 +6,7 @@ namespace Algorithms {
     {
         static void Main(string[] args)
         {
-            int result = SimpleAlgorithms.findMaximum(8, 4, 5);
-            Console.WriteLine(result); 
+            
         }
 
       
