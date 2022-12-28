@@ -7,7 +7,7 @@ namespace Algorithms {
     {
         static void Main(string[] args)
         {
-            String result = StringAlgorithms.NormalizeString("Hello, World!");
+            String result = StringAlgorithms.Reverse("Hello, World!");
             Console.WriteLine(result);
         }
 

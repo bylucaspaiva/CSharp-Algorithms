@@ -26,5 +26,21 @@ namespace AlgoritimicJourney.StringAlgorithms
         {
             return s.ToLower().Trim().Replace(",", "");      //Trim removes white spaces from start and end
         }
+
+        public static String Reverse(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+            {
+                return s;
+            }
+            StringBuilder reverse = new StringBuilder(s.Length);
+
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                reverse.Append(s[i]);
+            }
+
+            return reverse.ToString();
+        }
     }
 }
