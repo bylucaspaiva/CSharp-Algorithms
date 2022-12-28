@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgoritimicJourney.StringAlgorithms
 {
-    internal class StringAlgorithms
+    public class StringAlgorithms
     {
         static Boolean IsUpperCase(string s)
         {
@@ -15,6 +15,11 @@ namespace AlgoritimicJourney.StringAlgorithms
         static Boolean IsLowerCase(string s)
         {
             return s.All(char.IsLower);
+        }
+
+        public static Boolean IsPasswordComplex(string s)
+        {
+            return s.Any(char.IsDigit) && s.Any(char.IsUpper) && s.Any(char.IsLower);
         }
     }
 }
