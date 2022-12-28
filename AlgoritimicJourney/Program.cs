@@ -7,7 +7,7 @@ namespace Algorithms {
     {
         static void Main(string[] args)
         {
-            Boolean result = StringAlgorithms.IsPasswordComplex("dfhjsfFFD");
+            String result = StringAlgorithms.NormalizeString("Hello, World!");
             Console.WriteLine(result);
         }
 

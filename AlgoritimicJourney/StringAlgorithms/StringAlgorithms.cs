@@ -21,5 +21,10 @@ namespace AlgoritimicJourney.StringAlgorithms
         {
             return s.Any(char.IsDigit) && s.Any(char.IsUpper) && s.Any(char.IsLower);
         }
+
+        public static String NormalizeString(string s)
+        {
+            return s.ToLower().Trim().Replace(",", "");      //Trim removes white spaces from start and end
+        }
     }
 }
