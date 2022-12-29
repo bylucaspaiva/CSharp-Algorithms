@@ -42,5 +42,27 @@ namespace AlgoritimicJourney.StringAlgorithms
 
             return reverse.ToString();
         }
+
+        public static string ReverseEachWord(string s)
+        {
+            if(string.IsNullOrEmpty(s))
+            { 
+            return s;
+            }
+
+            StringBuilder result = new StringBuilder(s.Length);
+
+            string[] arr = s.Split(" ");
+            for(int i = 0; i < arr.Length; i++)
+            {
+                result.Append(Reverse(arr[i]));
+                if(i != arr.Length - 1)
+                {
+                    result.Append(' ');
+                }
+            }
+
+            return result.ToString();
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace Algorithms {
     {
         static void Main(string[] args)
         {
-            String result = StringAlgorithms.Reverse("Hello, World!");
+            String result = StringAlgorithms.ReverseEachWord("Hello, World!");
             Console.WriteLine(result);
         }
 
