@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,43 @@ public class ArrayMethods
             i++;
         }
         return false;
+    }
+
+    private static int[] IsEvenArrayNumbers(int[] arr)
+    {
+        ArrayList result = new ArrayList();
+        foreach(int num in arr)
+        {
+            if(num % 2 == 0)
+            {
+                result.Add(num);
+            }
+        }
+        return (int[])result.ToArray(typeof(int));
+    }
+
+    // take 2 arrays and aggregate only the even numbers in a new array
+    public static int[] FindEvenNumbers(int[] arr1, int[] arr2)
+    {
+        ArrayList result = new ArrayList();
+
+        foreach(int number in arr1)
+        {
+            if (number % 2 == 0)
+            {
+                result.Add(number);
+            }
+        }
+
+        foreach (int number in arr2)
+        {
+            if (number % 2 == 0)
+            {
+                result.Add(number);
+            }
+        }
+
+        return (int[])result.ToArray(typeof(int));
     }
 }
 
