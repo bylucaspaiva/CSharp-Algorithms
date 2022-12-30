@@ -17,5 +17,29 @@ public class ArrayMethods
         }
         return false;
     }
+
+    public static bool BinarySearch(int[] input, int n)
+    {
+        int end = input.Length - 1;
+        int start = 0;
+        int i = 1;
+        while(start <= end)
+        {
+            Console.WriteLine($"Iteration {i}");
+            int mid = (start + end) / 2;
+            if(n == input[mid])
+            {
+                return true;
+            }else if(n > input[mid])
+            {
+                start = mid + 1;
+            }else
+            {
+                end = mid - 1;
+            }
+            i++;
+        }
+        return false;
+    }
 }
 

@@ -9,7 +9,7 @@ namespace Algorithms {
         static void Main(string[] args)
         {
             int[] n = {1, 2, 3, 4, 9, 756, 5, 10};
-            bool result = ArrayMethods.LinearSearch(n, 756);
+            bool result = ArrayMethods.BinarySearch(n, 756);
             Console.WriteLine(result);
         }
 
