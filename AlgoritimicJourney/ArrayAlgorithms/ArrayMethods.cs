@@ -79,5 +79,17 @@ public class ArrayMethods
 
         return (int[])result.ToArray(typeof(int));
     }
+
+    public static int[] ReverseArray(int[] array)
+    {
+        int[] reverse = new int[array.Length];
+
+        for(int i = array.Length - 1; i >= 0 ; i--)
+        {
+            reverse[array.Length - 1 - i] = array[i];
+        }
+
+        return reverse;
+    }
 }
 

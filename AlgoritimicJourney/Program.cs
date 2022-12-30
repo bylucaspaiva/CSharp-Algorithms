@@ -10,7 +10,7 @@ namespace Algorithms {
         {
             int[] arr1 = {1, 2, 3, 4, 9, 756, 5, 10};
             int[] arr2 = { -4, 5, -6, 8, 22, 36 };
-            int[] result = ArrayMethods.FindEvenNumbers(arr1, arr2);
+            int[] result = ArrayMethods.ReverseArray(arr1);
             Array.ForEach(result, Console.WriteLine);
         }
 
