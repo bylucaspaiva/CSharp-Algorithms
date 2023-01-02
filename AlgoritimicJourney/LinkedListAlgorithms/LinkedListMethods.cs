@@ -45,24 +45,44 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             Node firstNode = new Node(1);
             Node secondNode = new Node(2);
             Node thirdNode = new Node(3);
+            Node fourthNode = new Node(4);
             linkedList.head = firstNode;
             firstNode.next = secondNode;
             secondNode.next = thirdNode;
+            thirdNode.next = fourthNode;
 
-            DeleteBackHalf(firstNode);
+            DeleteBackHalf(firstNode, linkedList.head);
 
         }
 
-        public void DeleteBackHalf(Node node)
-        {   
-            while(node != null)
+        public void DeleteBackHalf(Node node, Node head)
+        {
+
+            if(head == null || head.next == null)
+            {
+                head = null;
+            }
+            Node slow = head;
+            Node fast = head;
+            Node prev = null;
+
+            while(fast != null && fast.next != null)
+            {
+                prev = slow;
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            prev.next = null;
+
+            while (node != null)
             {
                 Console.Write(node.data + "->");
                 node = node.next;
             }
             Console.Write("null");
-
         }
+
+
     }
     
 
