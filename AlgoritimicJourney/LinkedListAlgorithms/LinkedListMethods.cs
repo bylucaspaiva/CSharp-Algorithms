@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlgoritimicJourney.LinkedListAlgorithms;
-
-public class CustomLinkedList
+namespace AlgoritimicJourney.LinkedListAlgorithms
 {
-    Node head;
+
     public class Node
     {
         public int data;
@@ -16,26 +14,47 @@ public class CustomLinkedList
         public Node next;
         public Node(int d) { data = d; }
     }
-}
-static public class LinkedListMethods
-{
-    public static void LinkedListOperations()
+
+    public class CustomLinkedList
     {
-        LinkedList<string> listy = new LinkedList<string>();
-        //AddLast, AddFirst
-        listy.AddLast("Lucas");
-        listy.AddLast("Kessia");
-        listy.AddLast("Arthur");
-        listy.AddFirst("strings");
-        listy.RemoveFirst();
-
-        foreach(string item in listy)
-        {
-            Console.Write(item + "->");
-        }
-        Console.Write("null");
-
+        public Node head;
     }
-};
+    static public class LinkedListMethods
+    {
+        public static void LinkedListOperations()
+        {
+            LinkedList<string> listy = new LinkedList<string>();
+            //AddLast, AddFirst
+            listy.AddLast("Lucas");
+            listy.AddLast("Kessia");
+            listy.AddLast("Arthur");
+            listy.AddFirst("strings");
+            listy.RemoveFirst();
 
+            foreach (string item in listy)
+            {
+                Console.Write(item + "->");
+            }
+            Console.Write("null");
+        }
 
+        public static void CustomLinkedListOperations()
+        {
+            CustomLinkedList linkedList = new CustomLinkedList();
+            
+            Node firstNode = new Node(1);
+            Node secondNode = new Node(2);
+            Node thirdNode = new Node(3);
+            linkedList.head= firstNode;
+            firstNode.next= secondNode;
+            secondNode.next= thirdNode;
+
+            //foreach(Node node in linkedList)
+            //{
+            //    Console.Write(node + "->");
+            //}
+            //Console.WriteLine("null");
+        }
+    };
+
+}
