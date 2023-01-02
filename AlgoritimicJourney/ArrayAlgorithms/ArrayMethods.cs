@@ -96,7 +96,7 @@ public class ArrayMethods
     {
         int[] temp = new int[array.Length];
 
-        if (n > 0 || n == 0)
+        if (n >= 0)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -113,18 +113,30 @@ public class ArrayMethods
         }
         else
         {
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    temp[i] = array[i];
+            //}
+
+            //for (int i = 0; i < array.Length - n; i++)
+            //{
+            //    array[i] = array[(i + n) % array.Length];
+            //}
+            //for (int i = 0; i < n; i++)
+            //{
+            //    array[array.Length - n + i] = temp[i];
+            //}
             for (int i = 0; i < array.Length; i++)
             {
-                temp[i] = array[i];
+                temp[i] = array[(i + n) % n];
             }
-
-            for (int i = 0; i < array.Length - n; i++)
+            for (int i = 0; i < n - array.Length; i++)
             {
-                array[i] = array[(i + n) % array.Length];
+                array[(i + n) % n] = array[(i + n + array.Length) % n];
             }
             for (int i = 0; i < n; i++)
             {
-                array[array.Length - n + i] = temp[i];
+                array[(n - array.Length + i + n) % n] = temp[i];
             }
         }
     }
