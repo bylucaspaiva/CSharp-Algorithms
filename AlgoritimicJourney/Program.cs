@@ -9,8 +9,8 @@ namespace Algorithms {
     {
         static void Main(string[] args)
         {
-
-            LinkedListMethods.LinkedListOperations();
+            CustomLinkedList customLinkedList = new CustomLinkedList(); 
+            customLinkedList.CustomLinkedListOperations();
             
         }
 

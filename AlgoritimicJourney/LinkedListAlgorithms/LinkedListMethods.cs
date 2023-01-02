@@ -38,7 +38,7 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             Console.Write("null");
         }
 
-        public static void CustomLinkedListOperations()
+        public void CustomLinkedListOperations()
         {
             CustomLinkedList linkedList = new CustomLinkedList();
 
@@ -49,16 +49,19 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             firstNode.next = secondNode;
             secondNode.next = thirdNode;
 
-            //foreach(Node node in linkedList)
-            //{
-            //    Console.Write(node + "->");
-            //}
-            //Console.WriteLine("null");
+            DeleteBackHalf(firstNode);
+
         }
 
-        public void DeleteBackHalf()
-        {
-            Node current = head;
+        public void DeleteBackHalf(Node node)
+        {   
+            while(node != null)
+            {
+                Console.Write(node.data + "->");
+                node = node.next;
+            }
+            Console.Write("null");
+
         }
     }
     
