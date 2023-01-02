@@ -95,41 +95,38 @@ public class ArrayMethods
     public static void RotateArray(int[] array, int n)
     {
         int[] temp = new int[array.Length];
-        
-        if(n > 0)
+
+        if (n > 0 || n == 0)
         {
-            for (int i = 0; i < array.Length; ++i)
+            for (int i = 0; i < array.Length; i++)
             {
-                temp[i] = array[array.Length - n + i];
+                temp[i] = array[(array.Length - n + i) % array.Length];
             }
-            for (int i = array.Length - 1; i >= n; --i)
+            for (int i = array.Length - 1; i >= n; i--)
             {
-                array[i] = array[i - n];
+                array[i] = array[(i - n) % array.Length];
             }
-            for(int i = 0; i < n; ++i)
+            for (int i = 0; i < n; i++)
             {
                 array[i] = temp[i];
             }
         }
         else
         {
-            for (int i = 0; i < array.Length; ++i)
+            for (int i = 0; i < array.Length; i++)
             {
                 temp[i] = array[i];
             }
 
-            for (int i = 0; i < array.Length - n; ++i)
+            for (int i = 0; i < array.Length - n; i++)
             {
-                array[i] = array[i + n];
+                array[i] = array[(i + n) % array.Length];
             }
-            for (int i = 0; i < n; ++i)
+            for (int i = 0; i < n; i++)
             {
-                array[array.Length - n + i] = array[i];
+                array[array.Length - n + i] = temp[i];
             }
         }
-
-
-
     }
 }
 
