@@ -11,7 +11,7 @@ namespace Algorithms {
             int[] arr1 = {1, 2, 3, 4, 9, 756, 5, 10};
             int[] arr2 = { -4, 5, -6, 8, 22, 36 };
             ArrayMethods.RotateArray(arr1, 2);
-            Console.WriteLine(arr1);
+            Array.ForEach(arr1, Console.WriteLine);
         }
 
       
