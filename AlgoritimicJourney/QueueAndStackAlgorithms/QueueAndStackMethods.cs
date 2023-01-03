@@ -16,7 +16,6 @@ namespace AlgoritimicJourney.QueueAndStackAlgorithms
             Console.WriteLine(HasMatchingParentheses("((Hello))()"));
 
 
-            PrintNextGreaterElement(arr);
         }
 
         public void SimpleQueue()
