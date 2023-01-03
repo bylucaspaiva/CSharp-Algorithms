@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AlgoritimicJourney.LinkedListAlgorithms.CustomLinkedList;
 
 namespace AlgoritimicJourney.LinkedListAlgorithms
 {
-
-    
-
     public class CustomLinkedList
     {
         public Node head;
@@ -52,13 +50,14 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             thirdNode.next = fourthNode;
 
             DeleteBackHalf(firstNode, linkedList.head);
-
+            DisplayContents(linkedList.head);
+;
         }
 
         public void DeleteBackHalf(Node node, Node head)
         {
 
-            if(head == null || head.next == null)
+            if (head == null || head.next == null)
             {
                 head = null;
             }
@@ -66,7 +65,7 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             Node fast = head;
             Node prev = null;
 
-            while(fast != null && fast.next != null)
+            while (fast != null && fast.next != null)
             {
                 prev = slow;
                 slow = slow.next;
@@ -74,16 +73,17 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             }
             prev.next = null;
 
-            while (node != null)
+        }
+
+        public void DisplayContents(Node head)
+        {
+            while (head != null)
             {
-                Console.Write(node.data + "->");
-                node = node.next;
+                Console.Write(head.data + "->");
+                head = head.next;
             }
             Console.Write("null");
         }
-
-
     }
-    
 
 }
