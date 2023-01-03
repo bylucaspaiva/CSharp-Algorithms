@@ -10,7 +10,7 @@ namespace AlgoritimicJourney.QueueAndStackAlgorithms
     {
         public void DisplayContent()
         {
-            PrintBinary(100);
+            SimpleStack();
         }
 
         public void SimpleQueue()
@@ -33,6 +33,7 @@ namespace AlgoritimicJourney.QueueAndStackAlgorithms
 
         public void PrintBinary(int n)
         {
+            //Prints every binary until n;
             if (n < 0) return;
             var queue = new Queue<int>();
             queue.Enqueue(1);
@@ -45,6 +46,21 @@ namespace AlgoritimicJourney.QueueAndStackAlgorithms
             }
 
             Console.WriteLine();    
+        }
+
+        public void SimpleStack()
+        {
+            var stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Pop();
+            stack.Push(3);
+
+            int current;
+            while(stack.TryPop(out current))
+            {
+                Console.WriteLine(current); 
+            }
         }
     }
 }
