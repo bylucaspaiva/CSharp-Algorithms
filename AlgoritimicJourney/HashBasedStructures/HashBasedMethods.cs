@@ -29,6 +29,21 @@ namespace AlgoritimicJourney.HashBasedStructures
             }
         }
 
+        public void HashSetOperations()
+        {
+            var productCodes = new HashSet<string>();
+            productCodes.Add("#1234");
+            productCodes.Add("#5342");
+            productCodes.Add("#6543");
+
+            Console.WriteLine(productCodes.Contains("fd"));
+            Console.WriteLine(productCodes.Contains("#1234"));
+
+
+
+
+        }
+
         public void DisplayContent()
         {
             
