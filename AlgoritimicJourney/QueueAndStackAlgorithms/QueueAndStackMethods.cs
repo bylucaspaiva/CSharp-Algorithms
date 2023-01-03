@@ -10,7 +10,8 @@ namespace AlgoritimicJourney.QueueAndStackAlgorithms
     {
         public void DisplayContent()
         {
-            SimpleStack();
+            int[] arr = new int[] { 15, 8, 4, 10 };
+            PrintNextGreaterElement(arr);
         }
 
         public void SimpleQueue()
@@ -60,6 +61,37 @@ namespace AlgoritimicJourney.QueueAndStackAlgorithms
             while(stack.TryPop(out current))
             {
                 Console.WriteLine(current); 
+            }
+        }
+
+        public void PrintNextGreaterElement(int[] arr)
+        {
+            var stack = new Stack<int>();
+            stack.Push(arr[0]);
+
+            for(int i = 1; i < arr.Length; i++)
+            {
+                int next = arr[i];
+                if(stack.Count > 0)
+                {
+                    int popped = stack.Pop();
+
+                    while(popped < next)
+                    {
+                        Console.WriteLine(popped + "-->" + next);
+                        if(stack.Count == 0) break;
+                        popped = stack.Pop();
+                    }
+                    if(popped > next)
+                    {
+                        stack.Push(popped);
+                    }
+                }
+                stack.Push(next);
+            }
+            while(stack.Count > 0)
+            {
+                Console.WriteLine(stack.Pop() + "-->" + -1);
             }
         }
     }
