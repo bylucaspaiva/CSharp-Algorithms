@@ -1,6 +1,7 @@
 ﻿using System;
 using AlgoritimicJourney.ArrayAlgorithms;
 using AlgoritimicJourney.LinkedListAlgorithms;
+using AlgoritimicJourney.QueueAndStackAlgorithms;
 using AlgoritimicJourney.SimpleAlgorithms;
 using AlgoritimicJourney.StringAlgorithms;
 
@@ -9,9 +10,11 @@ namespace Algorithms {
     {
         static void Main(string[] args)
         {
-            CustomLinkedList customLinkedList = new CustomLinkedList(); 
-            customLinkedList.CustomLinkedListOperations();
-            
+            var queue = new QueueAndStackCommonMethods();
+
+            queue.DisplayContent();
+
+
         }
 
       
