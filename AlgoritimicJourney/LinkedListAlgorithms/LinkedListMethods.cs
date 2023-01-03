@@ -49,7 +49,8 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             secondNode.next = thirdNode;
             thirdNode.next = fourthNode;
 
-            DeleteBackHalf(firstNode, linkedList.head);
+            //DeleteBackHalf(firstNode, linkedList.head);
+            DeleteKthNodeFromEnd(linkedList.head, 2);
             DisplayContents(linkedList.head);
 ;
         }
@@ -74,7 +75,6 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             prev.next = null;
 
         }
-
         public void DisplayContents(Node head)
         {
             while (head != null)
@@ -84,6 +84,35 @@ namespace AlgoritimicJourney.LinkedListAlgorithms
             }
             Console.Write("null");
         }
+
+        public void DeleteKthNodeFromEnd(Node head, int n)
+        {
+            if (head == null || n == 0) return;
+            Node first = head;
+            Node second = head;
+
+            for (int i = 0; i < n; i++)
+            {
+                second = second.next;
+                if (second.next == null)
+                {
+                    //k >- Length of list
+                    if (i == n - 1)
+                    {
+                        head = head.next;
+                    }
+                    return;
+                }
+            }
+
+            while (second.next != null)
+            {
+                first = first.next;
+                second = second.next;
+            }
+
+            first.next = first.next.next;
+        }
     }
 
-}
+};
