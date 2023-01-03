@@ -38,15 +38,36 @@ namespace AlgoritimicJourney.HashBasedStructures
 
             Console.WriteLine(productCodes.Contains("fd"));
             Console.WriteLine(productCodes.Contains("#1234"));
+        }
 
+        public List<int> findMissingNumbers(int[] first, int[] second)
+        {
+            var missingNumbers = new List<int>();
+            var secondArrayItems = new HashSet<int>();
 
+            foreach(int item in second)
+            {
+                secondArrayItems.Add(item);
+            }
 
+            foreach(int item in first)
+            {
+                if(secondArrayItems.Contains(item)) 
+                    missingNumbers.Add(item);
+            }
 
+            return missingNumbers;
         }
 
         public void DisplayContent()
         {
-            
+            int[] array1 = new int[] { 3, 2, 8, 4, 5 };
+            int[] array2 = new int[] { 5, 3, 7, 0, 2 };
+            var result = findMissingNumbers(array1, array2);
+            foreach(int item in result)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 

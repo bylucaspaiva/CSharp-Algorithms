@@ -18,7 +18,8 @@ namespace Algorithms {
             var hashMethods = new HashBasedMethods();
 
             //hashMethods.DictionaryOperations();
-            hashMethods.HashSetOperations();
+            //hashMethods.HashSetOperations();
+            hashMethods.DisplayContent();
         }
 
       
