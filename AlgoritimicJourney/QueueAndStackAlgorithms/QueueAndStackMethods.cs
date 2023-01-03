@@ -11,6 +11,11 @@ namespace AlgoritimicJourney.QueueAndStackAlgorithms
         public void DisplayContent()
         {
             int[] arr = new int[] { 15, 8, 4, 10 };
+            Console.WriteLine(HasMatchingParentheses("((Hello))"));
+            Console.WriteLine(HasMatchingParentheses("((Hello)()"));
+            Console.WriteLine(HasMatchingParentheses("((Hello))()"));
+
+
             PrintNextGreaterElement(arr);
         }
 
@@ -93,6 +98,33 @@ namespace AlgoritimicJourney.QueueAndStackAlgorithms
             {
                 Console.WriteLine(stack.Pop() + "-->" + -1);
             }
+        }
+        public bool HasMatchingParentheses(string s)
+        {
+            var stack = new Stack<char>();
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                char current = s[i];
+                if (current == '(')
+                {
+                    stack.Push(current);
+                    continue;
+                }
+
+                if (current == ')')
+                {
+                    if (stack.Count > 0)
+                    {
+                        stack.Pop();
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            return stack.Count == 0;
         }
     }
 }
