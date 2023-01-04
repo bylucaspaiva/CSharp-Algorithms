@@ -35,6 +35,32 @@ namespace AlgoritimicJourney.BinaryTreeAlgorithms
                 }
                 return root;
             }
+
+            public void PreOrderTraversal(Node root)
+            {
+                if (root == null) return;
+                Console.WriteLine(root.Data + " ");
+                PreOrderTraversal(root.Left);
+                PreOrderTraversal(root.Right);
+            }
+
+            public void InOrderTraversal(Node root)
+            {
+                if (root == null) return;
+                InOrderTraversal(root.Left);
+                Console.WriteLine(root.Data + " ");
+                InOrderTraversal(root.Right);
+            }
+
+            public void PostOrderTraversal(Node root)
+            {
+                if (root == null) return;
+                PostOrderTraversal(root.Left);
+                Console.WriteLine(root.Data + " ");
+                PostOrderTraversal(root.Right);
+            }
+
+
         }
     }
 }
