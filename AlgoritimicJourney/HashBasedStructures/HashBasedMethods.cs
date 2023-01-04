@@ -59,15 +59,39 @@ namespace AlgoritimicJourney.HashBasedStructures
             return missingNumbers;
         }
 
+        public void DisplayFrequenceOfEachElement(int[] array)
+        {
+            var freqDictionary = new Dictionary<int, int>();
+
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (freqDictionary.ContainsKey(array[i]))
+                {
+                    freqDictionary[array[i]]++;
+                } else {
+                    freqDictionary[array[i]] = 1;
+                }
+            }
+
+            foreach(KeyValuePair<int,int> x in freqDictionary)
+            {
+                Console.WriteLine(x.Key + " -> " + x.Value);
+            }
+        }
+
         public void DisplayContent()
         {
             int[] array1 = new int[] { 3, 2, 8, 4, 5 };
-            int[] array2 = new int[] { 5, 3, 7, 0, 2 };
+            int[] array2 = new int[] { 5, 3, 7, 0, 2, 2, 7 ,5, 5, 5 };
             var result = findMissingNumbers(array1, array2);
             foreach(int item in result)
             {
                 Console.WriteLine(item);
             }
+
+            Console.WriteLine();
+            DisplayFrequenceOfEachElement(array2);
+
         }
     }
 
