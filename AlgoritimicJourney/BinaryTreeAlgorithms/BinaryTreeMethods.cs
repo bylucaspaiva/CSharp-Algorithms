@@ -60,6 +60,23 @@ namespace AlgoritimicJourney.BinaryTreeAlgorithms
                 PostOrderTraversal(root.Right);
             }
 
+            public static bool Contains(Node root, int value)
+            {
+                if(root == null)
+                {
+                    return false;
+                } else if (value < root.Data)
+                {
+                    return Contains(root.Left, value);
+                } else if (value > root.Data)
+                {
+                    return Contains(root.Right, value); 
+                } else
+                {
+                    return true;
+                }
+            }
+
 
         }
     }
