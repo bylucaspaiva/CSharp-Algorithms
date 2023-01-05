@@ -1,5 +1,6 @@
 ﻿using System;
 using AlgoritimicJourney.ArrayAlgorithms;
+using AlgoritimicJourney.Generics;
 using AlgoritimicJourney.HashBasedStructures;
 using AlgoritimicJourney.LinkedListAlgorithms;
 using AlgoritimicJourney.QueueAndStackAlgorithms;
@@ -11,15 +12,8 @@ namespace Algorithms {
     {
         static void Main(string[] args)
         {
-            //var queue = new QueueAndStackCommonMethods();
-
-            //queue.DisplayContent();
-
-            var hashMethods = new HashBasedMethods();
-
-            //hashMethods.DictionaryOperations();
-            //hashMethods.HashSetOperations();
-            hashMethods.DisplayContent();
+            var generic = new GenericImplementations();
+            generic.generic();
         }
 
       
